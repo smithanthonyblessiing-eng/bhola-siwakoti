@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Award, Building2, BookOpen, Download, Calendar, Quote } from "lucide-react";
-import heroImg from "@/assets/hero-portrait.jpg";
+import heroImg from "@/assets/portrait-retouched.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,7 +51,7 @@ function Home() {
           </div>
           <div className="lg:col-span-5 relative">
             <div className="absolute -inset-8 bg-gold/10 blur-3xl rounded-full" aria-hidden />
-            <img src={heroImg} alt="Editorial portrait of Dr. Bhola Siwakoti" width={1280} height={1600} className="relative w-full max-w-md mx-auto shadow-elegant rounded-sm" />
+            <img src={heroImg} alt="Editorial portrait of Dr. Bhola Siwakoti" width={1024} height={1024} className="relative w-full max-w-md mx-auto aspect-square object-cover rounded-full shadow-elegant ring-2 ring-gold/40" />
             <div className="absolute -bottom-6 -left-6 bg-card border border-gold/30 px-5 py-3 rounded-sm shadow-elegant hidden sm:block">
               <p className="eyebrow mb-1">Doctorate</p>
               <p className="font-display text-sm">SSBM Geneva · 2025</p>
