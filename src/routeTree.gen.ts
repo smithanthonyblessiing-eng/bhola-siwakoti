@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as NonprofitRouteImport } from './routes/nonprofit'
+import { Route as MortgageRouteImport } from './routes/mortgage'
+import { Route as LiteratureRouteImport } from './routes/literature'
 import { Route as IndexRouteImport } from './routes/index'
 
+const NonprofitRoute = NonprofitRouteImport.update({
+  id: '/nonprofit',
+  path: '/nonprofit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MortgageRoute = MortgageRouteImport.update({
+  id: '/mortgage',
+  path: '/mortgage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiteratureRoute = LiteratureRouteImport.update({
+  id: '/literature',
+  path: '/literature',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/literature': typeof LiteratureRoute
+  '/mortgage': typeof MortgageRoute
+  '/nonprofit': typeof NonprofitRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/literature': typeof LiteratureRoute
+  '/mortgage': typeof MortgageRoute
+  '/nonprofit': typeof NonprofitRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/literature': typeof LiteratureRoute
+  '/mortgage': typeof MortgageRoute
+  '/nonprofit': typeof NonprofitRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/literature' | '/mortgage' | '/nonprofit'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/literature' | '/mortgage' | '/nonprofit'
+  id: '__root__' | '/' | '/literature' | '/mortgage' | '/nonprofit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LiteratureRoute: typeof LiteratureRoute
+  MortgageRoute: typeof MortgageRoute
+  NonprofitRoute: typeof NonprofitRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/nonprofit': {
+      id: '/nonprofit'
+      path: '/nonprofit'
+      fullPath: '/nonprofit'
+      preLoaderRoute: typeof NonprofitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mortgage': {
+      id: '/mortgage'
+      path: '/mortgage'
+      fullPath: '/mortgage'
+      preLoaderRoute: typeof MortgageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/literature': {
+      id: '/literature'
+      path: '/literature'
+      fullPath: '/literature'
+      preLoaderRoute: typeof LiteratureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +104,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LiteratureRoute: LiteratureRoute,
+  MortgageRoute: MortgageRoute,
+  NonprofitRoute: NonprofitRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
