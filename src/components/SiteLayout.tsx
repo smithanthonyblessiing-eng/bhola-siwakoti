@@ -117,11 +117,11 @@ export function SiteLayout() {
           </div>
           <div className="space-y-3 text-sm">
             <p className="eyebrow mb-4">Direct</p>
-            <a href="mailto:bholasiwakoti@gmail.com" className="flex items-center gap-3 hover:text-gold transition"><Mail className="w-4 h-4 text-gold" /> bholasiwakoti@gmail.com</a>
-            <a href="tel:6032193571" className="flex items-center gap-3 hover:text-gold transition"><Phone className="w-4 h-4 text-gold" /> (603) 219-3571</a>
-            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-gold transition"><Linkedin className="w-4 h-4 text-gold" /> LinkedIn – Volasi Wakoti</a>
-            <a href={LINKTREE_URL} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-gold transition"><Link2 className="w-4 h-4 text-gold" /> Linktree – Mortgage Your Best</a>
-            <p className="flex items-center gap-3 text-muted-foreground"><MapPin className="w-4 h-4 text-gold" /> Liberty Township, Ohio</p>
+            <a href="mailto:bholasiwakoti@gmail.com" className="flex items-center gap-3 hover:text-gold transition"><Mail className="w-4 h-4 text-gold" /><span>bholasiwakoti@gmail.com</span></a>
+            <a href="tel:6032193571" className="flex items-center gap-3 hover:text-gold transition"><Phone className="w-4 h-4 text-gold" /><span>(603) 219-3571</span></a>
+            <a href={LINKEDIN_URL} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-gold transition"><Linkedin className="w-4 h-4 text-gold" /><span>LinkedIn – Volasi Wakoti</span></a>
+            <a href={LINKTREE_URL} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-gold transition"><Link2 className="w-4 h-4 text-gold" /><span>Linktree – Mortgage Your Best</span></a>
+            <p className="flex items-center gap-3 text-muted-foreground"><MapPin className="w-4 h-4 text-gold" /><span>Liberty Township, Ohio</span></p>
           </div>
           <div>
             <p className="eyebrow mb-4">Resources</p>
