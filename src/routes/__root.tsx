@@ -83,8 +83,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Dr. Bhola Siwakoti — Mortgage Leader & Nonprofit Executive" },
       { name: "twitter:description", content: "Executive portfolio of Dr. Bhola Siwakoti, GDBA, MBA — Regional Mortgage Manager, nonprofit leader, and literary contributor." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2727c9df-4140-4d20-ac26-8488e8ec2982/id-preview-27bfa504--fd9710db-956f-4281-87ee-77a86ec16cfc.lovable.app-1778214441432.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2727c9df-4140-4d20-ac26-8488e8ec2982/id-preview-27bfa504--fd9710db-956f-4281-87ee-77a86ec16cfc.lovable.app-1778214441432.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c0938595-7c27-4dc0-9402-f6868fece3a0" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c0938595-7c27-4dc0-9402-f6868fece3a0" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
